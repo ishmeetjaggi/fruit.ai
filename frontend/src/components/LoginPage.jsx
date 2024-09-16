@@ -12,7 +12,7 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8000/login/", {
+      const response = await axios.post("https://fruit-ai-backend-eigz.onrender.com/login/", {
         username: email,
         password,
       });
