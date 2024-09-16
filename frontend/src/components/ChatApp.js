@@ -91,7 +91,7 @@ const ChatApp = () => {
 
   useEffect(() => {
     if (activeChat === 'Chatbot') {
-      axios.get('http://localhost:8000/fruits/')
+      axios.get('https://fruit-ai-backend-eigz.onrender.com/fruits/')
         .then((response) => {
           setFruits(response.data);
           const fruitMessages = response.data.map(fruit => ({
