@@ -77,36 +77,29 @@
 
 
 
-
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ChatApp.css';
 
 const ChatApp = () => {
-  const [activeChat, setActiveChat] = useState('Chatbot');  // Default chat is Chatbot
+  const [activeChat, setActiveChat] = useState('Chatbot');
   const [fruits, setFruits] = useState([]);
-  const [messages, setMessages] = useState([]); // Store the messages between user and chatbot
-  const [userInput, setUserInput] = useState(''); // Store user input
+  const [messages, setMessages] = useState([]);
+  const [userInput, setUserInput] = useState('');
+  const [quantity, setQuantity] = useState(1);
+  const [selectedFruit, setSelectedFruit] = useState(null);
 
-  const [quantity, setQuantity] = useState(1); // Default quantity is 1
-  const [selectedFruit, setSelectedFruit] = useState(null); // Store selected fruit
-
-  // Fetch fruits from the backend
   useEffect(() => {
     if (activeChat === 'Chatbot') {
       axios.get('http://localhost:8000/fruits/')
         .then((response) => {
           setFruits(response.data);
-          
-          // Add fruit information to the message list
           const fruitMessages = response.data.map(fruit => ({
             sender: 'bot',
             text: `Here is the fruit information:`,
-            fruit: fruit
+            fruit: fruit,
           }));
-          
-          setMessages(fruitMessages); // Display all fruits when user enters Chatbot
+          setMessages(fruitMessages);
         })
         .catch((error) => {
           console.error('There was an error fetching the fruits!', error);
@@ -117,46 +110,39 @@ const ChatApp = () => {
   const handleSendMessage = () => {
     if (!userInput.trim()) return;
 
-    // Add user's message to message list
     setMessages((prevMessages) => [
       ...prevMessages,
-      { sender: 'user', text: userInput }
+      { sender: 'user', text: userInput },
     ]);
 
-    // Find fruit based on user input
     const foundFruit = fruits.find(fruit => fruit.name.toLowerCase() === userInput.toLowerCase());
 
     if (foundFruit) {
       setSelectedFruit(foundFruit);
-      setQuantity(1); // Reset quantity to 1 when selecting a fruit
-
-      // If fruit is found, show fruit card with quantity
+      setQuantity(1);
       setMessages((prevMessages) => [
         ...prevMessages,
-        { sender: 'bot', text: `Here is the fruit information:`, fruit: foundFruit, quantity: 1 }
+        { sender: 'bot', text: `Here is the fruit information:`, fruit: foundFruit, quantity: 1 },
       ]);
     } else {
-      // If fruit is not found, send a "not available" message
       setMessages((prevMessages) => [
         ...prevMessages,
-        { sender: 'bot', text: `Sorry, ${userInput} is not available.` }
+        { sender: 'bot', text: `Sorry, ${userInput} is not available.` },
       ]);
     }
 
-    setUserInput(''); // Clear input field
+    setUserInput('');
   };
 
-  // Update quantity and recalculate price
   const updateQuantity = (increment) => {
     setQuantity((prevQuantity) => {
-      const newQuantity = Math.max(prevQuantity + increment, 1); // Ensure quantity doesn't go below 1
+      const newQuantity = Math.max(prevQuantity + increment, 1);
 
-      // Update the selected fruit message with the new quantity
       setMessages((prevMessages) => prevMessages.map((message) => {
-        if (message.fruit && message.fruit.name === selectedFruit.name) {
+        if (message.fruit && message.fruit.name === selectedFruit?.name) {
           return {
             ...message,
-            quantity: newQuantity
+            quantity: newQuantity,
           };
         }
         return message;
@@ -173,8 +159,8 @@ const ChatApp = () => {
       <div className="chat-list">
         <h2>Chats</h2>
         {dummyChats.map((chat, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className={`chat-item ${activeChat === chat ? 'active' : ''}`}
             onClick={() => setActiveChat(chat)}
           >
@@ -198,18 +184,16 @@ const ChatApp = () => {
                       <div className="fruit-details">
                         <h4>{message.fruit.name}</h4>
 
-                        {/* Display price and quantity on the same row */}
                         <div className="fruit-price-quantity">
                           <p>Price per unit: ${message.fruit.price.toFixed(2)}</p>
                           <div className="quantity-controls">
                             <button onClick={() => updateQuantity(-1)}>-</button>
-                            <span>{message.quantity}</span>
+                            <span>{message.quantity || quantity}</span> {/* Display quantity here */}
                             <button onClick={() => updateQuantity(1)}>+</button>
                           </div>
                         </div>
 
-                        {/* Display total price below the counter */}
-                        <p className="total-price">Total Price: ${(message.fruit.price * message.quantity).toFixed(2)}</p>
+                        <p className="total-price">Total Price: ${(message.fruit.price * (message.quantity || quantity)).toFixed(2)}</p>
                       </div>
                     </div>
                   ) : (
@@ -237,7 +221,6 @@ const ChatApp = () => {
 };
 
 export default ChatApp;
-
 
 
 
