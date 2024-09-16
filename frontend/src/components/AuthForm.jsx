@@ -19,7 +19,7 @@ const AuthForm = () => {
 
   const handleSignupSubmit = async (values, { setSubmitting }) => {
     try {
-      const response = await axios.post("http://localhost:8000/account/signup/", values);
+      const response = await axios.post("https://fruit-ai-backend-eigz.onrender.com/account/signup/", values);
       alert("Account created successfully!");
     } catch (error) {
       alert("Account creation failed: " + error.response.data.detail);
@@ -29,7 +29,7 @@ const AuthForm = () => {
 
   const handleSigninSubmit = async (values, { setSubmitting }) => {
     try {
-      const response = await axios.post("http://localhost:8000/account/signin/", values);
+      const response = await axios.post("https://fruit-ai-backend-eigz.onrender.com/account/signin/", values);
       alert("Sign-in successful!");
       navigate("/chat");
     } catch (error) {
