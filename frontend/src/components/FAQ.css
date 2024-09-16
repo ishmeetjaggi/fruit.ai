@@ -1,0 +1,128 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .faqpage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #bb66bb, #90cfe4, #8cdda7);
+    padding: 20px;
+  }
+  
+  .header {
+    text-align: center;
+    color: white;
+  }
+  
+  .header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .search-container {
+    margin-bottom: 20px;
+  }
+  
+  .search-container input {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .faq-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .faq-item {
+    background: rgba(255, 255, 255, 0.462);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faq-content {
+    margin-bottom: 10px;
+  }
+  
+  .faq-actions button {
+    background: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background 0.3s;
+  }
+  
+  .faq-actions button:hover {
+    background: #ff3b2f;
+  }
+  
+  .edit-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .edit-modal input,
+  .edit-modal textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .edit-modal button {
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .edit-modal button:hover {
+    background: #218838;
+  }
+  
+  .edit-modal button.cancel {
+    background: #dc3545;
+  }
+  
+  .edit-modal button.cancel:hover {
+    background: #c82333;
+  }
+  
+  /* Add FAQ Button */
+  .add-faq-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .add-faq-button:hover {
+    background-color: #45a049;
+  }
+  

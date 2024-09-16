@@ -1,0 +1,200 @@
+General Styles
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    background: linear-gradient(135deg, #bb66bb, #90cfe4, #8cdda7);
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+    color: #180808;
+}
+
+.chat-list {
+    width: 30%;
+    background-color: rgba(73, 72, 82, 0.9); /* Translucent */
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.chat-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.377);
+    border-radius: 8px;
+   
+}
+
+.chat-item:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.active {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.chat-window {
+    width: 70%; /* Adjusted for better fit */
+    background-color: rgba(209, 208, 219, 0.9); /* Translucent */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Ensures chat messages are aligned to the bottom */
+}
+
+.chat-messages {
+    flex-grow: 1;
+    overflow-y: auto; /* Enables vertical scrolling */
+    max-height: 70vh; /* Limits the height of the chat messages area */
+    margin-bottom: 10px;
+    padding-right: 10px; /* Adds space for the scrollbar */
+}
+
+/* Styles for scrollbar */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background-color: #9c9c9c34; /* Purple scrollbar */
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1); /* Light track */
+}
+
+.message {
+    margin-bottom: 15px;
+}
+
+.message.user {
+    text-align: right;
+}
+
+.message.bot {
+    text-align: left;
+}
+
+.message p {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 60%;
+}
+
+.message.user p {
+    background-color: #bb66bb;
+    color: white;
+}
+
+.message.bot p {
+    background-color: #90cfe4;
+    color: black;
+}
+
+/* Fruit Card Specific Styles */
+.fruit-card {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    align-items: center;
+    width: 50%; /* Adjust based on your layout */
+}
+
+.fruit-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.fruit-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+}
+
+.fruit-price-quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5px; /* Add space between this row and the total price */
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem; /* Bigger font for better readability */
+}
+
+.quantity-controls button {
+    background-color: #bb66bb; /* Purple color */
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quantity-controls button:hover {
+    background-color: #e8b3e1; /* Slightly darker purple on hover */
+}
+
+.quantity-controls span {
+    margin: 0 10px;
+}
+
+.total-price {
+    color: #333;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Chat Input Styles */
+.chat-input {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Optional for border at top of input */
+}
+
+.chat-input input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-right: 10px; /* Space between input and button */
+}
+
+.chat-input button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color: #0056b3;
+}

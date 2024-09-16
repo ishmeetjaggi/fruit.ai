@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Container for the full-page layout */
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #bb66bb, #90cfe4, #6de4ce);
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  color: white;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* Card container to align the cards */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Default: 4 columns */
+  gap: 1rem;
+  width: 80%;
+  padding-bottom: 1rem;
+}
+
+/* Individual card styles - set width and height for smaller cards */
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgba(10, 3, 56, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%; /* 100% of available width in the grid column */
+  max-width: 200px; /* Limit maximum size */
+}
+
+.card h2, .card img {
+  font-size: 1.2rem; /* Reduce font size to match smaller card */
+  color: #333;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 10px 15px rgba(10, 3, 56, 0.3);
+}
+
+/* Different color schemes for each card */
+/* .chat-card {
+  background-color: #e1c386;
+  
+}
+
+.translate-card {
+  background-color: #ccffcc;
+}
+
+.faqs-card {
+  background-color: #e6ccff;
+}
+
+.about-card {
+  background-color: #ffd9e6;
+}
+
+/* Empty cards */
+/* .empty-card1 {
+  background-color: #7b82c4;
+  
+}
+.empty-card2 {
+  background-color: #da94c9;
+  
+}
+.empty-card3 {
+  background-color: #7ee2c1;
+  
+}
+.empty-card4 {
+  background-color: #5981cb;
+  
+} */ 
+
+
+/* General card styles with inner shadow and blurred borders */
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1; /* Keep the cards square */
+  border-radius: 20px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25), 5px 5px 15px rgba(0, 0, 0, 0.2); /* Inner and outer shadow */
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%; /* 100% of available width in the grid column */
+  max-width: 150px; /* Limit maximum size */
+  backdrop-filter: blur(8px); /* Apply blur effect */
+}
+
+/* Hover effect to emphasize shadow and transform */
+.card:hover {
+  transform: scale(1.05);
+  
+}
+
+/* Different color schemes for each card */
+.chat-card {
+  background-color: #e1c386;
+  color: #15af27;
+}
+
+.translate-card {
+  background-color: #ccffcc;
+  color: #15af27;
+}
+
+.faqs-card {
+  background-color: #e6ccff;
+}
+
+.about-card {
+  background-color: #ffd9e6;
+  color: #bb66bb
+}
+
+/* Empty cards with their specific background colors and styles */
+.empty-card1 {
+  background-color: #7b82c4;
+}
+
+.empty-card2 {
+  background-color: #da94c9;
+}
+
+.empty-card3 {
+  background-color: #7ee2c1;
+}
+
+.empty-card4 {
+  background-color: #5981cb;
+}
+
+
+/* Dots for navigation (mock functionality) */
+.dots {
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.dot.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Responsive design for large tablets (max-width: 1024px) */
+@media (max-width: 500px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 1.5rem;
+  }
+
+  .card {
+    max-width: 120px; /* Smaller max width for medium screens */
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .header p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Responsive design for small screens (max-width: 768px) */
+@media (max-width:100px ) {
+  .card-container {
+    grid-template-columns: 1fr; /* 1 column */
+    gap: 1rem;
+  }
+
+  .card {
+    max-width: 100px; /* Smaller max width for mobile screens */
+  }
+
+  .header h1 {
+    font-size: 2.2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+}
