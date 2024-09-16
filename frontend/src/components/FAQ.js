@@ -16,7 +16,7 @@ const FAQ = () => {
   }, []);
 
   const fetchFAQs = async () => {
-    const response = await fetch('http://localhost:8000/faqs'); // Adjust URL as needed
+    const response = await fetch('https://fruit-ai-backend-eigz.onrender.com/faqs'); // Adjust URL as needed
     const data = await response.json();
     setFaqs(data);
   };
@@ -32,7 +32,7 @@ const FAQ = () => {
   };
 
   const handleSave = async () => {
-    await fetch(`http://localhost:8000/faqs/${editId}`, {
+    await fetch(`https://fruit-ai-backend-eigz.onrender.com/faqs/${editId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ question: editQuestion, answer: editAnswer }),
@@ -42,12 +42,12 @@ const FAQ = () => {
   };
 
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:8000/faqs/${id}`, { method: 'DELETE' });
+    await fetch(`https://fruit-ai-backend-eigz.onrender.com/faqs/${id}`, { method: 'DELETE' });
     fetchFAQs();
   };
 
   const handleAddFAQ = async () => {
-    const response = await fetch('http://localhost:8000/newfaq/', {
+    const response = await fetch('https://fruit-ai-backend-eigz.onrender.com/newfaq/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ question: newQuestion, answer: newAnswer }),
