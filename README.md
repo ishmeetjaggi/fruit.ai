@@ -8,13 +8,17 @@ Welcome to **Fruit.AI**! We aim to provide the best AI-powered solutions to make
   - Simple login interface with dummy credentials (`hello@gmail.com`, password: `hello`).
   - Redirects users to the homepage after successful login.
   
-    ![Homepage Screenshot](./Screenshot 2024-09-16 075339.png)
+    ![Homepage Screenshot](./loginpage.png)
     
 
 - **Chatbot**: 
   - A real-time chat where users can interact with a chatbot.
   - Displays a list of fruits in the form of cards, fetched from the database.
   - Users can select individual fruits to view detailed information.
+     ![Homepage Screenshot](./chatregister.png)
+     ![Homepage Screenshot](./chatregister(2).png)
+     ![Homepage Screenshot](./login.png)
+ ![Homepage Screenshot](./chatbot.png)
 
 - **Translator**: 
   - Allows users to input text and translate it into regional languages.
@@ -22,6 +26,7 @@ Welcome to **Fruit.AI**! We aim to provide the best AI-powered solutions to make
 - **FAQs Page**: 
   - Implements basic CRUD functionality to manage frequently asked questions.
   - Users can create, read, update, and delete FAQs related to fruits.
+    
 
 - **About Page**: 
   - Basic information about the Fruit.AI platform and its purpose.
