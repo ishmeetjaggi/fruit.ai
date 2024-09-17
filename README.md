@@ -54,7 +54,8 @@ Welcome to **Fruit.AI**! We aim to provide the best AI-powered solutions to make
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/your-repo.git
+    git clone https://github.com/ishmeetjaggi/fruit.ai.git
+  
     cd your-repo
     ```
 
