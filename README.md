@@ -7,6 +7,8 @@ Welcome to **Fruit.AI**! We aim to provide the best AI-powered solutions to make
 - **Login System**: 
   - Simple login interface with dummy credentials (`hello@gmail.com`, password: `hello`).
   - Redirects users to the homepage after successful login.
+  
+    ![Homepage Screenshot](./Screenshot 2024-09-16 075339.png)
     
 
 - **Chatbot**: 
