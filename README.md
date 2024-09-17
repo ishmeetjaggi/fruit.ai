@@ -9,6 +9,7 @@ Welcome to **Fruit.AI**! We aim to provide the best AI-powered solutions to make
   - Redirects users to the homepage after successful login.
   
     ![Homepage Screenshot](./loginpage.png)
+     ![Homepage Screenshot](./homepage.png)
     
 
 - **Chatbot**: 
